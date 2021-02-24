@@ -20,7 +20,7 @@ Your implementation should have the following basic steps for each vertex:
 - Find the closest point on joint j's bone segment (axis) and compute the distance to this closest point (Hint: `closest_on_line_segment` might come in handy).
     - Diagram of `closest_on_line_segment`:
 <center><img src="task3_media/closest_on_line_segment.png" style="height:280px"></center>
-- Compute the resulting position of the vertex by doing a weighted average of the bind-to-posed transforms from each bone and applying it to the vertex. The weights for the weighted average should be the inverse distance to the joint, so closer bones have a stronger influence.
+- Compute the resulting position of the vertex by doing a weighted average of the vertex positions calculated by bind-to-posed transforms from each bone. The weights for the weighted average should be the inverse distance to the joint, so closer bones have a stronger influence.
 
 Below we have an equation representation. The ith vertex v is the new vertex position. The weight w is the weight metric computed as the inverse of distance between the ith vertex and the closest point on joint j. We multiply this term with the position of the ith vertex v with respect to joint j after joint's transformations has been applied.
 
